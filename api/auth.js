@@ -6,7 +6,6 @@ import dotenv from "dotenv";
 import { registerCheck } from "../middlewares/RegisterCheck.js";
 
 dotenv.config();
-n
 const authRouter = Router();
 
 authRouter.post("/register", [registerCheck], async (req, res) => {
