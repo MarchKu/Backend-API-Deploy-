@@ -86,9 +86,7 @@ authRouter.post("/login", async (req, res) => {
 
     return res.status(200).json({ message: "Login successfuly", token });
   } catch {
-    return res
-      .status(500)
-      .json({ message: "Cannot login due to server connection" });
+    return res.status(500).json(req.body);
   }
 });
 authRouter.get("/", async (req, res) => {

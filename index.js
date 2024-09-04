@@ -1,9 +1,12 @@
 import express from "express";
 import postRouter from "./api/posts.js";
 import authRouter from "./api/auth.js";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 4000;
+
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.send("API is working on main route");
