@@ -1,5 +1,6 @@
 import express from "express";
 import postRouter from "./api/posts.js";
+import authRouter from "./api/auth.js";
 
 const app = express();
 const port = 4000;
@@ -13,6 +14,7 @@ app.get("/test", (req, res) => {
 });
 
 app.use("/posts", postRouter);
+app.use("/auth", authRouter);
 
 app.listen(port, () => {
   console.log(`API is running at port ${port}`);
